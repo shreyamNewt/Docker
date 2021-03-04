@@ -1,16 +1,20 @@
-# <ADDD YOUR HEADER HERE>
+# DOCKER
 
 
 ###### DESCRIPTION:
-<FILL YOUR PROJECT DESCRIPTION HERE>
+To learn basic commands of docker and to create unbuntu instance.
+Contains all basic docker commands + Dockerfile bascis for reference and will also contain an interactive exercise which 
+Leverages on Docker file to create a docker container which will use a ubuntu image and install all python dependencies and pull in the required 
+python project for use
 ****
 
 ###### CODING STANDARD:
-**<Fill your coding Standard Here if any>**
+**`None`**
 ****
 
 ###### PRE-REQUISITES
-`<ADD Pre-Requisites if any>` 
+Docker
+UBUNTU  
 ****
 
 ###### HEADERS
