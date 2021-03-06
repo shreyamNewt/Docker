@@ -2,23 +2,23 @@
 ******
 ### It consists of commands such as:
 
-RUN
+`RUN`
 ******
 
-CMD
+`CMD`
 ******
 
-USER
+`USER`
 ******
 
-WORKDIR
+`WORKDIR`
 ******
 
-EXPOSE
+`EXPOSE`
 ******
 
-COPY
+`COPY`
 ******
 
-VOLUME 
+`VOLUME` 
 ******
