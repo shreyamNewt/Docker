@@ -6,7 +6,7 @@ hub.docker.com/search
 
 Syntax: docker pull <image-name>:<Tag>
   
-Example: docker pull ubuntu:18.04
+Example: `docker pull ubuntu:18.04`
 *****  
 
 ### To see the existing docker images in your local docker application, use 
@@ -16,7 +16,7 @@ docker images
 
 ### Additionally, To view your dependent child images you can use, which will show all the dependency images as well.
 
-docker images -a
+`docker images -a`
 *****
 
 ### To run an container we use, the command
@@ -25,11 +25,11 @@ Syntax: docker run -d -it --name <container_name> <ImageName>:<Tag>
 
 Example: 
 
-docker run -d -it --name ub_inst Ubuntu:18.04
+`docker run -d -it --name ub_inst Ubuntu:18.04`
 
 ( or ) 
 
-docker run -dit --name ub_inst Ubuntu:18.04
+`docker run -dit --name ub_inst Ubuntu:18.04`
 
 Where,
 
@@ -73,7 +73,7 @@ To expose ports use
 
 where -P <SystemPort>:<DockerPort>
   
-Example: docker run -dit -p 8080:8080  --name ub_inst Ubuntu:18.04
+Example: `docker run -dit -p 8080:8080  --name ub_inst Ubuntu:18.04`
 *****
 
 ### Adding Volumes
@@ -84,5 +84,5 @@ use -v  option before image name
 
 Where -v <LocalDirectory>:<DockerVolume>:rw (Read/Write) or ro (Read Only) 
   
-Example: docker run -dit -p 8080:8080 -v ~/suganths_terminal/ubuntu_test_20200912/:/suganth:rw --name ub_inst Ubuntu:18.04 
+Example: `docker run -dit -p 8080:8080 -v ~/suganths_terminal/ubuntu_test_20200912/:/suganth:rw --name ub_inst Ubuntu:18.04` 
 *****
