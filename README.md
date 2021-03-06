@@ -19,10 +19,10 @@ UBUNTU
 
 ###### HEADERS
 
-1. <Title 1>
-	1. [Sub-Title 1](https://wwww.githuburl.com)
-2. <Title 1>
-	1. [Sub-Title 1](https://wwww.githuburl.com)
+1. Docker Basics
+	1. [Basics](https://github.com/shreyamNewt/Docker/blob/main/Docker%20Basic%20Commands.txt)
+2. Docker Commands
+	1. [Commands](https://github.com/shreyamNewt/Docker/blob/main/Docker%20Basic%20Commands1.txt)
 
 
 
