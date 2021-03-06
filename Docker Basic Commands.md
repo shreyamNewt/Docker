@@ -6,7 +6,9 @@ hub.docker.com/search
 
 Syntax: docker pull <image-name>:<Tag>
   
-Example: `docker pull ubuntu:18.04`
+Example:
+
+`docker pull ubuntu:18.04`
 *****  
 
 ### To see the existing docker images in your local docker application, use 
@@ -44,7 +46,7 @@ Where,
 
 ### As Docker Assigned User
 
-docker exec -it <container name or ID> bash
+`docker exec -it <container name or ID> bash`
   
 exec => Execute
 
@@ -54,7 +56,7 @@ bash or /bin/bash => method of moving in
   
 ### As Main User,
        
-docker attach <container name or ID>
+`docker attach <container name or ID>`
 *****
   
 ### For exiting a container without closing your docker, use :
