@@ -11,7 +11,7 @@ Example: `docker pull ubuntu:18.04`
 
 ### To see the existing docker images in your local docker application, use 
 
-docker images
+`docker images`
 
 
 ### Additionally, To view your dependent child images you can use, which will show all the dependency images as well.
