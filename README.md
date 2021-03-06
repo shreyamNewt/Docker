@@ -20,9 +20,9 @@ UBUNTU
 ###### HEADERS
 
 1. Docker Basics
-	1. [Basics](https://github.com/shreyamNewt/Docker/blob/main/Docker%20Basic%20Commands.txt)
+	1. [Basics](https://github.com/shreyamNewt/Docker/blob/main/Docker%20Basic%20Commands.md)
 2. Docker Commands
-	1. [Commands](https://github.com/shreyamNewt/Docker/blob/main/Docker%20Basic%20Commands1.txt)
+	1. [Commands](https://github.com/shreyamNewt/Docker/blob/main/Docker%20Basic%20Commands1.md)
 
 
 
