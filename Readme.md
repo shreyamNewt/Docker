@@ -18,7 +18,7 @@ UBUNTU
 
 1.Basic Commands
 
-	1. [Docker Basic Commands](https://wwww.githuburl.com)
+	1. [Docker Basic Commands](https://github.com/shreyamNewt/Docker/blob/main/Docker%20Basic%20Commands.txt)
 
 
 
