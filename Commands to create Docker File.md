@@ -29,6 +29,10 @@
 `RUN apt install -y wget`
 
 
+###################################
+# DOCKER PYTHON STARTS HERE     #
+###################################
+
 #### Download Python-3.7.0
 
 `RUN wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz`
@@ -59,6 +63,16 @@
 
 `RUN make install`
 
+###################################
+# DOCKER PYTHON SETUP STOPS HERE #
+###################################
+
+
+
+#############################
+# PROJECT SETUP STARTS HERE #
+#############################
+
 
 #### Install Git
 
@@ -68,3 +82,8 @@
 #### Pull Python Project from Git
 
 `RUN git clone https://github.com/SugaanthMohan/Python_DSA.git`
+
+
+#############################
+# PROJECT SETUP ENDS HERE   #
+#############################
