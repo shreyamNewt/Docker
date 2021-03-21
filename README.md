@@ -21,7 +21,7 @@ UBUNTU
 
 1. Docker Basics
 	1. [Basics](https://github.com/shreyamNewt/Docker/blob/main/Docker%20Basic%20Commands.md)
-2. Docker Commands
+2. Dockerfile Commands
 	1. [Commands](https://github.com/shreyamNewt/Docker/blob/main/Docker%20Basic%20Commands1.md)
 
 
@@ -29,5 +29,5 @@ UBUNTU
 ###### AUTHOR INFO
 **NAME**  : `SHREYA MALIK`
 
-**GITHUB** : `[Shreya Malik](https://github.com/shreyamNewt)`
+**GITHUB** : [Shreya Malik](https://github.com/shreyamNewt)
 
