@@ -4,7 +4,9 @@
 
 #### RUN
 **Description** : `RUN` command allows you to execute terminal commands while creating your custom docker image.
+
 **Syntax**  : `RUN <Your Terminal Command Here>`
+
 **Example** : `RUN apt update` (Incase of Ubuntu)
 ******
 
