@@ -40,7 +40,9 @@
 #### COPY
 **Description** : `COPY` instruction copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>
   
-**Example** : `COPY [--chown=<user>:<group>] <src>... <dest>`
+**Syntax** : `COPY [--chown=<user>:<group>] <src>... <dest>`
+
+**Example ** : `COPY requirements.txt ./`
 ******
 
 #### VOLUME
