@@ -10,32 +10,41 @@
 **Example** : `RUN apt update` (Incase of Ubuntu)
 ******
 
-`CMD`
-#### Set the default command to run when starting the container
-Example : ``
+#### CMD
+**Description** : The main purpose of a `CMD` is to provide defaults for an executing container.
+
+**Syntax** : `CMD ["executable","param1","param2"]`
+
+**Example** : `CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]`
 ******
 
-`USER`
-#### USER instruction sets the user name (or UID) and optionally the user group (or GID) to use when running the image and for any RUN, CMD and ENTRYPOINT instructions that follow it in the Dockerfile
-Example : `USER root`
+#### USER
+**Description** : `USER` instruction sets the user name (or UID) and optionally the user group (or GID) to use when running the image and for any RUN, CMD and ENTRYPOINT instructions that follow it in the Dockerfile
+
+**Example** : `USER root`
 ******
 
-`WORKDIR`
-#### Define working directory
-Example : `WORKDIR /tmp`
+#### WORKDIR
+
+**Description** :  Define working directory
+
+**Example** : `WORKDIR /tmp`
 ******
 
-`EXPOSE`
-#### To specify docker container listens to specified port
-Example : `EXPOSE 5432`
+#### EXPOSE
+**Description** : To specify docker container listens to specified port
+
+**Example** : `EXPOSE 5432`
 ******
 
-`COPY`
-#### COPY instruction copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>
-Example : `COPY [--chown=<user>:<group>] <src>... <dest>`
+#### COPY
+**Description** : `COPY` instruction copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>
+  
+**Example** : `COPY [--chown=<user>:<group>] <src>... <dest>`
 ******
 
-`VOLUME` 
-#### VOLUME instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.
-Example : `VOLUME /myvol`
+#### VOLUME
+**Description** : `VOLUME` instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.
+
+**Example** : `VOLUME /myvol`
 ******
