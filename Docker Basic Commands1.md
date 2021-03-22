@@ -11,7 +11,7 @@
 ******
 
 #### CMD
-**Description** : The main purpose of a `CMD` is to provide defaults for an executing container.
+**Description** : The main purpose of a `CMD` is to execute a command after the creation of docker when it starts running. A good working example might be a restful api you want to run or like starting a database inside your docker container.
 
 **Syntax** : `CMD ["executable","param1","param2"]`
 
@@ -19,26 +19,26 @@
 ******
 
 #### USER
-**Description** : `USER` instruction sets the user name (or UID) and optionally the user group (or GID) to use when running the image and for any RUN, CMD and ENTRYPOINT instructions that follow it in the Dockerfile
+**Description** : `USER` instruction is used to select/switch the user name (or UID) and optionally the user group (or GID) for using while running the image for any RUN, CMD and ENTRYPOINT instructions that follow it in the Dockerfile.
 
 **Example** : `USER root`
 ******
 
 #### WORKDIR
 
-**Description** :  Define working directory
+**Description** :  Define or switch to a different directory. It is like a combination of cd and mkdir -p.
 
 **Example** : `WORKDIR /tmp`
 ******
 
 #### EXPOSE
-**Description** : To specify docker container listens to specified port
+**Description** : To specify docker container ports to be exposed inside the docker for usage.
 
 **Example** : `EXPOSE 5432`
 ******
 
 #### COPY
-**Description** : `COPY` instruction copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>
+**Description** : `COPY` instruction copies new files or directories from <src> ( in your build machine) and adds them to the filesystem inside the container at the path <dest>.
   
 **Syntax** : `COPY [--chown=<user>:<group>] <src>... <dest>`
 
@@ -46,7 +46,8 @@
 ******
 
 #### VOLUME
-**Description** : `VOLUME` instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.
+**Description** : `VOLUME` instruction creates a mount point with the specified name and can be used to share between multiple Dockers and also with docker running machine.
+
 
 **Example** : `VOLUME /myvol`
 ******
