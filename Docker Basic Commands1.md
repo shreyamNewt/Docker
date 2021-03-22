@@ -42,7 +42,7 @@
   
 **Syntax** : `COPY [--chown=<user>:<group>] <src>... <dest>`
 
-**Example ** : `COPY requirements.txt ./`
+**Example** : `COPY requirements.txt ./`
 ******
 
 #### VOLUME
