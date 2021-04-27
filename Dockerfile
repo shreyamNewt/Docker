@@ -1,71 +1,68 @@
-#### Use the Ubuntu Image
-
-`FROM ubuntu:latest`
-
-
-#### SET THE MAINTAINER FOR EMAIL UPDATES
-
-`MAINTAINER shreyamlk96@gmail.com`
+# USE THE UBUNTU IMAGE
+FROM ubuntu:18.04
 
 
-#### Root USER
+# SET THE MAINTAINER FOR EMAIL UPDATES
+MAINTAINER shreyamlk96@gmail.com
+USER root
 
-`USER root`
+# UPDATE INSTALL HANDLE
+RUN apt update
 
-
-#### Define Working directory
-
-`WORKDIR /tmp`
-
-
-#### UPDATE INSTALL HANDLE
-
-`RUN apt update`
+# ADD THE GNUPG2 FOR UBUNTU OPERATION
+RUN apt install -y gnupg2
 
 
-#### Check the dependencies of the packages you want and install any that are needed.
-#### Run apt-get update to update all your package lists
+# ==========================================================================================================
 
-`RUN apt install -y wget`
+WORKDIR /tmp/postgres10
+
+###################################
+# DOCKER POSTGRES STARTS HERE     #
+###################################
+
+RUN apt-get install -y wget ca-certificates
+
+RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" >> /etc/apt/sources.list.d/pgdg.list
+
+RUN apt-get update
+
+RUN apt-get update && apt-get install -y software-properties-common postgresql postgresql-contrib
+ 
+# Note: The official Debian and Ubuntu images automatically ``apt-get clean``
+# after each ``apt-get``
+
+# Run the rest of the commands as the ``postgres`` user created by the ``postgres-9.3`` package when it was ``apt-get installed``
+USER postgres
+
+# Create a PostgreSQL role named ``docker`` with ``docker`` as the password and
+# then create a database `docker` owned by the ``docker`` role.
+# Note: here we use ``&&\`` to run commands one after the other - the ``\``
+#       allows the RUN command to span multiple lines.
+RUN    /etc/init.d/postgresql start &&\
+    psql -U postgres -c "CREATE USER learningtasker WITH SUPERUSER PASSWORD 'm3rg3r';" &&\
+    psql -U postgres -c "ALTER USER postgres WITH PASSWORD 'm3rg3r';" &&\
+    createdb -O learningtasker learningtasks
+
+# Adjust PostgreSQL configuration so that remote connections to the
+# database are possible.
+RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/10/main/pg_hba.conf
+
+# And add ``listen_addresses`` to ``/etc/postgresql/9.3/main/postgresql.conf``
+RUN echo "listen_addresses='*'" >> /etc/postgresql/10/main/postgresql.conf
+
+# Expose the PostgreSQL port
+EXPOSE 5432
+
 
 
 ###################################
-# DOCKER PYTHON STARTS HERE     #
+# DOCKER POSTGRES SETUP ENDS HERE #
 ###################################
 
-#### Download Python-3.7.0
-
-`RUN wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz`
-
-
-#### Untar the Python file
-
-`RUN tar -zxvf Python-3.7.0.tgz`
-
-
-#### Create Working directory Python-3.7.0
-
-`WORKDIR /tmp/Python-3.7.0`
-
-
-#### UPDATE INSTALL HANDLE
-
-`RUN apt update`
-
-
-#### Install Python dependencies
-
-`RUN apt install -y build-essential libpq-dev libssl-dev openssl libffi-dev zlib1g-dev`
-
-`RUN ./configure --enable-optimizations`
-
-`RUN make -j8`
-
-`RUN make install`
-
-###################################
-# DOCKER PYTHON SETUP STOPS HERE #
-###################################
+# ==========================================================================================================
 
 
 
@@ -74,16 +71,17 @@
 #############################
 
 
-#### Install Git
-
-`RUN apt install -y git`
-
-
-#### Pull Python Project from Git
-
-`RUN git clone https://github.com/SugaanthMohan/Python_DSA.git`
+# SETUP YOUR USER WORK DIRECTORY HERE
+WORKDIR /tmp/Database
 
 
-#############################
-# PROJECT SETUP ENDS HERE   #
-#############################
+# USER POSTGRES
+USER postgres
+
+# Add VOLUMEs to allow backup of config, logs and databases
+VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
+
+# Set the default command to run when starting the container
+CMD ["/usr/lib/postgresql/10/bin/postgres", "-D", "/var/lib/postgresql/10/main", "-c", "config_file=/etc/postgresql/10/main/postgresql.conf"]
+
+WORKDIR /home/sugaanth/
